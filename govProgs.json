@@ -1,13 +1,5 @@
 [
  {
-   "ProgTitle": "Program Title",
-   "ProgNumber": "Program Number",
-   "GovAgency": "Agency",
-   "PubDate": "Published Date",
-   "AgencyShort": "Parent Shortname",
-   "WebURL": "URL"
- },
- {
    "ProgTitle": "Agricultural Research Basic and Applied Research",
    "ProgNumber": "10.001",
    "GovAgency": "Agricultural Research Service, Department Of Agriculture",

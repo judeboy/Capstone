@@ -39,7 +39,6 @@ def upgrade():
 
     with open('govProgs.json', 'r') as file:
         seedData = json.load(file)
-        # print(seedData)
 
     programs_table = table('programs',
         column('id', Integer),

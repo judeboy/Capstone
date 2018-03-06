@@ -1,6 +1,8 @@
-from app import db
+from app import db, ma
 
 class Programs(db.Model):
+    __tablename__= "programs"
+
     id = db.Column(db.Integer, primary_key=True, index=True)
     ProgTitle = db.Column(db.String(1000), unique=True)
     ProgNumber = db.Column(db.String(1000), unique=True)
@@ -19,3 +21,15 @@ class Programs(db.Model):
 
     def __repr__(prog):
         return '<Programs {}>'.format(prog.ProgTitle)
+
+class ProgramsSchema(ma.Schema):
+    class Meta:
+        fields = ('ProgTitle',
+        'AgencyShort',
+        'ProgNumber',
+        'GovAgency',
+        'PubDate',
+        'WebURL')
+
+program_schema = ProgramsSchema()
+programs_schema = ProgramsSchema(many=True)

@@ -9,10 +9,8 @@ from flask_apispec import use_kwargs, marshal_with
 
 
 
-def create_app:
-    app = Flask(__name__)
-    return app
-    
+
+app = Flask(__name__)    
 ma = Marshmallow(app)
 app.config.from_object(Config)
 db = SQLAlchemy(app)

@@ -6,7 +6,7 @@ from flask import jsonify
 
 
 
-@app.route("/api/all_programs")
+@app.route("/api")
 def get_progs():
     all_programs = Programs.query.all()
     result = programs_schema.dump(all_programs)

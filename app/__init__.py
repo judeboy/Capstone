@@ -11,9 +11,9 @@ from flask_apispec import use_kwargs, marshal_with
 
 
 app = Flask(__name__)
-ma = Marshmallow(app)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
+ma = Marshmallow(app)
 migrate = Migrate(app, db)
 
 from app import routes, models

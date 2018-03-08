@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -10,7 +10,7 @@ from flask_apispec import use_kwargs, marshal_with
 
 
 
-app = Flask(__name__)    
+app = Flask(__name__)
 ma = Marshmallow(app)
 app.config.from_object(Config)
 db = SQLAlchemy(app)

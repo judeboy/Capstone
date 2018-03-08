@@ -1,12 +1,16 @@
 """empty message
 
 Revision ID: 9d82b4b72f34
-Revises: 
+Revises:
 Create Date: 2018-03-07 14:32:55.494663
 
 """
 from alembic import op
 import sqlalchemy as sa
+from app import models
+import json
+from sqlalchemy.sql import table, column
+from sqlalchemy import String, Integer, Date
 
 
 # revision identifiers, used by Alembic.
@@ -39,7 +43,24 @@ def upgrade():
     sa.UniqueConstraint('WebURL')
     )
     op.create_index(op.f('ix_programs_id'), 'programs', ['id'], unique=False)
-    # ### end Alembic commands ###
+
+    with open('govProgs.json', 'r') as file:
+        seedData = json.load(file)
+
+
+    programs_table = table('programs',
+        column('id', Integer),
+        column('ProgTitle', String),
+        column('ProgNumber', String),
+        column('GovAgency', String),
+        column('PubDate', String),
+        column('AgencyShort', String),
+        column('WebURL', String)
+        )
+
+    op.bulk_insert(programs_table,
+        seedData
+    )
 
 
 def downgrade():

@@ -23,7 +23,7 @@ def get_sean():
     return jsonify(arr)
 
 @app.route("/api/gov_agencies")
-@use_kwargs({'AgencyShort': fields.Str()})
+@use_kwargs({'GovAgency': fields.Str()})
 @marshal_with(programs_schema)
 def list_agencies():
-    return Programs.query.filter_by(AgencyShort="DOD").all()
+    return Programs.query.filter_by(GovAgency="Small Business Administration").all()

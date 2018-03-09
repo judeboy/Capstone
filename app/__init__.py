@@ -16,4 +16,4 @@ migrate = Migrate(app, db)
 
 
 
-from app import routes, models, .config
+from app import routes, models, config

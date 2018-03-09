@@ -3,9 +3,6 @@ from .models import Programs, programs_schema
 from flask import jsonify
 
 
-
-
-
 @app.route("/")
 def get_progs():
     all_programs = Programs.query.all()
@@ -22,6 +19,6 @@ def get_sean():
         arr.append(i['GovAgency'])
     return jsonify(arr)
 
-@app.route("/api/gov_agencies"
+@app.route("/api/gov_agencies")
 def list_agencies():
     return Programs.query.filter_by(GovAgency="Small Business Administration").all()

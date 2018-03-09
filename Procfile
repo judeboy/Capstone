@@ -1,1 +1,3 @@
-web: gunicorn -w 4 app:app
+web: gunicorn app:app
+init: python db_create.py
+upgrade: python db_upgrade.py

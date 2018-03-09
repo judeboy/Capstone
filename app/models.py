@@ -3,7 +3,7 @@ from app import db, ma
 
 class Programs(db.Model):
     __tablename__= "programs"
-
+    
     id = db.Column(db.Integer, primary_key=True, index=True)
     ProgTitle = db.Column(db.String(1000),)
     ProgNumber = db.Column(db.String(1000), unique=True)
